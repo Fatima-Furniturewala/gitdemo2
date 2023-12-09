@@ -113,7 +113,7 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/prod' && github.event_name == 'push'
-        run: terraform apply -input=false tf.plan
+        run: terraform apply -input=false -auto-approve tf.plan
         working-directory: ./staging # Use your environment folder
         shell: bash
         
